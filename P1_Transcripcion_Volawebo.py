@@ -18,6 +18,10 @@ snareDrumPhrase = Phrase(0.0)
 hiHatPhrase = Phrase(0.0)
 
 melodyPitch = [
+   REST,
+   REST,
+   REST,
+   REST,
    D4, F4, D5,
    D4, F4, D5,
 
@@ -41,6 +45,10 @@ melodyPitch = [
 ]
 
 melodyDur = [
+   DHN,
+   DHN,
+   DHN,
+   DHN,
    EN, EN, HN,
    EN, EN, HN,
 
@@ -68,30 +76,30 @@ chordPitch = [
     REST, [G3, B3],
     REST, [A3, C4], [A3, C4],
     REST, [G3, B3],
-] * 3
+] * 4
 chordDur = [
     QN, QN, QN,
     QN, HN,
     QN, QN, QN,
     QN, HN
-] * 3
+] * 4
 
 bassPitch = [
     D3, REST,
     D3, REST,
     D3, REST,
     D3, REST,
-] * 3
+] * 4
 bassDur = [
     QN, HN,
     QN, HN,
     QN, HN,
     QN, HN,
-] * 3
+] * 4
 
 # print("pitch: ", len(melodyPitch), "dur: ", len(melodyDur))
 
-delta = 12
+delta = 24
 repeatN = 8
 
 ## Drums
