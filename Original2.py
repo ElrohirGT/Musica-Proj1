@@ -133,9 +133,9 @@ snareDrumPit = [REST] * delta + [REST, SNR, SNR] * repeatN
 snareDrumDur = [QN] * delta +   [QN,   QN,  QN] * repeatN
 
 hihatDelta = 36
-hihatRepeat = 3
-hiHatDrumPit = [REST] * hihatDelta + [REST, CHH, CHH, CHH] * hihatRepeat
-hiHatDrumDur = [QN] * hihatDelta + [QN,   QN,  EN,  EN] * hihatRepeat
+hihatRepeat = 4
+hiHatDrumPit = [REST] * hihatDelta + [REST, CHH, CHH, CHH] * hihatRepeat + [REST] * 21 + [REST, REST, CHH, CHH]
+hiHatDrumDur = [QN] * hihatDelta + [QN,   QN,  EN,  EN] * hihatRepeat +    [QN]   * 21 + [QN,   QN,   EN,  EN]
 # hiHatDrumPit = [REST, SNR, SNR, SNR] * repeatN
 # hiHatDrumDur = [QN,   QN,  EN,  EN, ] * repeatN
 
