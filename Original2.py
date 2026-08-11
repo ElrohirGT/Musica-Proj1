@@ -123,13 +123,31 @@ bassVariationDur = [
 ]
 
 # Percusion ----------------------------------------------------------------
-percussionPitch = [
-]
+repeatN = 12
+delta = 24
 
-percussionDur = [
+bassDrumPit = [REST] * delta + [BDR, REST, REST] * repeatN
+bassDrumDur = [QN] * delta +   [QN,  QN,   QN] * repeatN
 
-]
+snareDrumPit = [REST] * delta + [REST, SNR, SNR] * repeatN
+snareDrumDur = [QN] * delta +   [QN,   QN,  QN] * repeatN
 
+hihatDelta = 36
+hihatRepeat = 3
+hiHatDrumPit = [REST] * hihatDelta + [REST, CHH, CHH, CHH] * hihatRepeat
+hiHatDrumDur = [QN] * hihatDelta + [QN,   QN,  EN,  EN] * hihatRepeat
+# hiHatDrumPit = [REST, SNR, SNR, SNR] * repeatN
+# hiHatDrumDur = [QN,   QN,  EN,  EN, ] * repeatN
+
+# Percusion
+bassDrumPhrase = Phrase(0.0)
+bassDrumPhrase.addNoteList(bassDrumPit, bassDrumDur)
+snareDrumPhrase = Phrase(0.0)
+snareDrumPhrase.addNoteList(snareDrumPit, snareDrumDur)
+hiHatPhrase = Phrase(0.0)
+hiHatPhrase.addNoteList(hiHatDrumPit, hiHatDrumDur)
+
+# Melody Phrases
 melodyPhrase = Phrase() # Frase que contiene la melodia
 contramelodyPhrase = Phrase() # Frase que contiene la contramelodia
 harmonyPhrase = Phrase() # Frase que contiene la armonia
@@ -141,7 +159,7 @@ melodyPhrase.addNoteList(melodyPitch, melodyDur) # Agrega las notas y duraciones
 contramelodyPhrase.addNoteList(contramelodyPitch, contramelodyDur) # Agrega las notas y duraciones a la frase
 harmonyPhrase.addNoteList(harmonyPitch, harmonyDur) # Agrega las notas y duraciones a la frase
 bassPhrase.addNoteList(bassPitch, bassDur) # Agrega las notas y duraciones a la frase
-percussionPhrase.addNoteList(percussionPitch, percussionDur) # Agrega las notas y duraciones a la frase
+#percussionPhrase.addNoteList(percussionPitch, percussionDur) # Agrega las notas y duraciones a la frase
 
 # Frase 2
 #melodyPhrase.addNoteList(melodyVariation, melodyVariationDur)
@@ -153,7 +171,10 @@ AccordionPart.addPhrase(melodyPhrase) # Agrega la frase a la parte del instrumen
 FlutePart.addPhrase(contramelodyPhrase) # Agrega la frase a la parte del instrumento
 PianoPart.addPhrase(harmonyPhrase) # Agrega la frase a la parte del instrumento
 BassPart.addPhrase(bassPhrase) # Agrega la frase a la parte del instrumento
-PercussionPart.addPhrase(percussionPhrase) # Agrega la frase a la parte del instrumento
+## Percusión
+PercussionPart.addPhrase(bassDrumPhrase)
+PercussionPart.addPhrase(hiHatPhrase)
+PercussionPart.addPhrase(snareDrumPhrase)
 
 originalCompositionBasedOnStorms.addPart(AccordionPart) # Agrega la parte del instrumento a la partitura
 originalCompositionBasedOnStorms.addPart(FlutePart) # Agrega la parte del instrumento a la partitura
