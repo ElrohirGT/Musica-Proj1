@@ -184,4 +184,4 @@ originalCompositionBasedOnStorms.addPart(PercussionPart) # Agrega la parte del i
 
 Play.midi(originalCompositionBasedOnStorms) # Reproduce la partitura en formato MIDI
 
-Write.midi(originalCompositionBasedOnStorms, "Original2.mid") # Guarda la partitura en un archivo MIDI
+Write.midi(originalCompositionBasedOnStorms, "P1_Composicion2_Volawebo.mid") # Guarda la partitura en un archivo MIDI
